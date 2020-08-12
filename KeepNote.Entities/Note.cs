@@ -1,4 +1,6 @@
-﻿namespace KeepNote.Entities
+﻿using System;
+
+namespace KeepNote.Entities
 {
     /*
      * This class will be used to define a Note
@@ -10,6 +12,9 @@
      **/
     public class Note
     {
-      
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public DateTime CreationDate { get; set; }
     }
 }

@@ -11,6 +11,12 @@ namespace KeepNote.DAO
      */
     public class NoteRepository : INoteRepository
     {
+        readonly NotesDbContext _dbContext;
+        public NoteRepository(NotesDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         public Task AddNoteForExistingUser(string userId, Note note)
         {
             throw new System.NotImplementedException();
