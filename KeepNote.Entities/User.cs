@@ -17,6 +17,6 @@ namespace KeepNote.Entities
         public string UserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public ICollection<Note> Notes { get; set; }
+        public List<Note> Notes { get; set; }
     }
 }
