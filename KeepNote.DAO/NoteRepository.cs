@@ -35,10 +35,9 @@ namespace KeepNote.DAO
 
         public Task DeleteNote(string userId, int noteId)
         {
-            //var filter = Builders<User>.Filter.Where(x => x.UserId == userId);
-            //var delNote = Builders<User>.Update.Pull<Note>(x => x.Notes, Query.Eq);
-            //return _dbContext.UserNotes.FindOneAndDeleteAsync(filter);
-            throw new System.NotImplementedException();
+            var filter = Builders<User>.Filter.Where(x => x.UserId == userId);
+            var delNote = Builders<User>.Update.PullFilter(x => x.Notes, x=>x.Id == noteId);
+            return _dbContext.UserNotes.UpdateOneAsync(filter,delNote);
         }
 
         public Task<Note> GetNoteById(string userId, int noteId)
@@ -50,7 +49,7 @@ namespace KeepNote.DAO
         public Task<List<Note>> GetNotesByUser(string userId)
         {   
             return  _dbContext.UserNotes.Find(x => x.UserId == userId)
-                .Project(y => y.Notes).FirstAsync();
+                .Project(y => y.Notes.ToList()).FirstAsync();
         }
 
         public User GetUser(string userId)
@@ -60,7 +59,10 @@ namespace KeepNote.DAO
 
         public Task UpdateNote(string userId, int noteId, Note note)
         {
-            throw new System.NotImplementedException();
+            var filter = Builders<User>.Filter.Where(x => x.UserId == userId && x.Notes.Any(z=> z.Id == noteId));
+            var updateNote = Builders<User>.Update.Set(x => x.Notes[-1].Title, note.Title)
+                .Set(x=>x.Notes[-1].Content, note.Content);
+            return _dbContext.UserNotes.FindOneAndUpdateAsync(filter, updateNote);
         }
     }
 }
