@@ -25,7 +25,7 @@ namespace KeepNote.DAO
         {
             var filter = Builders<User>.Filter.Where(x => x.UserId == userId);
             var addNote = Builders<User>.Update.Push<Note>(x => x.Notes, note);
-            return _dbContext.UserNotes.FindOneAndUpdateAsync(filter, addNote);
+            return _dbContext.UserNotes.UpdateOneAsync(filter, addNote);
         }
 
         public Task AddUser(User user)

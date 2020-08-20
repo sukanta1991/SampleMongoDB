@@ -67,7 +67,7 @@ namespace tests
         public async Task CreateNoteShouldSuccess()
         {
             string userId = "mukesh@stackroute.in";
-            Note note = new Note { Title="Test", Content="Unit Testing using Nunit", CreationDate= DateTime.Now };
+            Note note = new Note { Id = 2, Title ="Test", Content="Unit Testing using Nunit", CreationDate= DateTime.Now };
             await noteRepository.AddNoteForExistingUser(userId, note);
 
             var result = await noteRepository.GetNotesByUser(userId);

@@ -15,9 +15,9 @@ namespace KeepNote.DAO
         readonly IMongoDatabase _database;
         public NotesDbContext()
         {
-            var connectionString = "";
+            var connectionString = "mongodb://adminuser:adminuser@localhost:27017";
             var client = new MongoClient(connectionString);
-            _database = client.GetDatabase("userDb");
+            _database = client.GetDatabase("notedb");
         }
 
         /*
