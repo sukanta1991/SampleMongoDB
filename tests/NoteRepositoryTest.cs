@@ -66,7 +66,7 @@ namespace tests
         [Test, Order(4)]
         public async Task CreateNoteShouldSuccess()
         {
-            string userId = "mukesh@stackroute.in";
+            string userId = "mukesh@goel.in";
             Note note = new Note { Id = 2, Title ="Test", Content="Unit Testing using Nunit", CreationDate= DateTime.Now };
             await noteRepository.AddNoteForExistingUser(userId, note);
 
@@ -79,7 +79,7 @@ namespace tests
         [Test,Order(5)]
         public async Task GetNoteByIdShouldSuccess()
         {
-            string userId = "mukesh@stackroute.in";
+            string userId = "mukesh@goel.in";
             int noteId =2;
 
             var result = await noteRepository.GetNoteById(userId, noteId);
@@ -91,7 +91,7 @@ namespace tests
         [Test, Order(6)]
         public async Task UpdateNoteShouldSuccess()
         {
-            string userId = "mukesh@stackroute.in";
+            string userId = "mukesh@goel.in";
             int noteId = 2;
             Note note = new Note { Id=2, Title="Unit Testing", Content= "Unit Testing using Nunit", CreationDate=DateTime.Now };
             await noteRepository.UpdateNote(userId, noteId,note);
@@ -105,7 +105,7 @@ namespace tests
         [Test, Order(7)]
         public async Task DeleteNoteShouldSuccess()
         {
-            string userId = "mukesh@stackroute.in";
+            string userId = "mukesh@goel.in";
             int noteId = 2;
             await noteRepository.DeleteNote(userId, noteId);
 
