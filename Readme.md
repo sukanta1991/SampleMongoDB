@@ -6,7 +6,7 @@ Refer the problem.md file for problem description.
 
 #### To use this as a boilerplate for your assignment, please follow these steps
 
-1. **FORK** this repository in your Gitlab account
+1. **FORK** this repository in your Github account
 
 2. **CLONE** the forked repository, containing the boilerplate in your local machine
 
@@ -33,18 +33,3 @@ Refer the problem.md file for problem description.
      `git push -u origin master`
 
 8. Check on the git repo online, if the files have been pushed
-
-9. Submit your solution on Hobbes
-
-
-### Important instructions for Participants
-> - We expect you to write the assignment on your own by following through the guidelines, learning plan, and the practice exercises
-> - The code must not be plagiarized, the mentors will randomly pick the submissions and may ask you to explain the solution
-> - The code must be properly indented, code structure maintained as per the boilerplate and properly commented
-> - Follow through the problem statement shared with you
-
-### MENTORS TO BEGIN REVIEW YOUR WORK ONLY AFTER ->
-> - You add the respective Mentor as a Reporter/Master into your Assignment Repository
-> - You must check the correctness of each requirement by running the application in your local machine before submitting for review.
-> - Intimate your Mentor on Slack and/or Send an Email to learner.support@stackroute.in - with your Git URL - Once you done working and is ready for final submission.
-
