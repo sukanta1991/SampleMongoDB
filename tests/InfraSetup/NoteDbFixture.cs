@@ -27,7 +27,7 @@ namespace tests.InfraSetup
             {
                 new User
                 {
-                    UserId="mukesh@stackroute.in",
+                    UserId="mukesh@goel.in",
                     FirstName="Mukesh",
                     LastName="Goel",
                     Notes= new List<Note>
